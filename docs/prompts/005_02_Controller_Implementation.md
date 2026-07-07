@@ -23,7 +23,7 @@ Rules:
 
 Success criteria:
 - It implements the files defined in 005_Implementation_Plan_Controller.md
-- Project should build/compile and test cases should pass as its the green state.
+- Project should build/compile and test cases should pass as it's the green state.
 - We should be able to follow Success criteria defined in 005_Implementation_Plan_Controller.md
 
 Once completed, respond only with:

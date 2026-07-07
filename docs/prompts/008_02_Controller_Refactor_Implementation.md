@@ -9,7 +9,7 @@ Output Format: As defined in 008_Implementation_Plan_Controller_Refactor.md
 
 Task: Read Plan.md and 008_Implementation_Plan_Controller_Refactor.md.
 Implement the changes from 008_Implementation_Plan_Controller_Refactor.md
-- Make sure we follow the order during implementation - refactor code and verify tests still pass and then refactor tests and reverify
+- Make sure we follow the order during implementation - refactor code and verify tests still pass and then refactor tests and reverify.
 
 
 Rules:

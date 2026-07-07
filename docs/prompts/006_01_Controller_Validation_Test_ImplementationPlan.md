@@ -4,12 +4,12 @@ Role: You are a senior backend architect.
 
 Input: docs/.ai/Plan.md
 Task: Read Plan.md and 001_API_Contract.md and create 006_Implementation_Plan_Controller_Validation_Test.md file.
-- Follow the 001_API_Contract.md and Plan.md to find the Controller validation tests and other tests
-- This implementation plan should satisfy Milestone 6 planning
+- Follow the 001_API_Contract.md and Plan.md to find the Controller validation tests and other tests.
+- This implementation plan should satisfy Milestone 6 planning.
 - Review the current state before writing the plan to add changes accordingly.
-- Make sure you cover all negative and positive cases to ensure the later code handles all required cases and Plan.md can be updated
+- Make sure you cover all negative and positive cases to ensure the later code handles all required cases and Plan.md can be updated.
 - Target the real controller classes already created. Do not generate placeholder controllers.
-- Do not try to add any changes in main code files. The scope is limited to test class planning only
+- Do not try to add any changes in main code files. The scope is limited to test class planning only.
 - Only create or update this file. Do not create or modify anything else.
 
 Output Format: 
@@ -33,7 +33,7 @@ Rules:
 - Code/config snippets are allowed only inside this implementation plan to show the intended skeleton structure.
 - Do not create .gitkeep files or placeholder files just to force empty folders into Git.
 - Success criteria should be for implementation not plan.
-- Do not pull future milestone work into this plan
+- Do not pull future milestone work into this plan.
 - Do not assume. Ask clarifying questions if required.
 
 

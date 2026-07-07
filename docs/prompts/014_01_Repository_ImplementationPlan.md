@@ -4,10 +4,10 @@ Role: You are a senior backend architect.
 
 Input: docs/.ai/Plan.md
 Task: Read Plan.md and 001_API_Contract.md and create 014_Implementation_Plan_Repository.md file.
-- Follow the 013_Implementation_Plan_Repository_Test.md,  Plan.md to find the Repository validation tests and other tests
+- Follow the 013_Implementation_Plan_Repository_Test.md,  Plan.md to find the Repository validation tests and other tests.
 - This implementation plan should satisfy Milestone 14 planning.
 - Review the current state before writing the plan to add changes accordingly.
-- Make sure we are following plan and creating only enough code to turn the tests green not any other validations or anything which was not defined or approved
+- Make sure we are following plan and creating only enough code to turn the tests green not any other validations or anything which was not defined or approved.
 - Make sure code compiles and all test cases pass after implementation of created plan.
 - Make sure the code follows SOLID principles and the repository layer contains only data access logic.
 - Only create or update this file. Do not create or modify anything else.
@@ -24,7 +24,7 @@ Output Format:
 
 Rules:
 - Only include items explicitly required by Milestone 14 or explicitly requested in this prompt.
-- Use Standard Java naming conventions for files as well as folders
+- Use Standard Java naming conventions for files as well as folders.
 - Follow docs/.ai/Plan.md strictly.
 - Show both Before and After Changes for comparison.
 - Make sure the code readability is maintained in preview mode.

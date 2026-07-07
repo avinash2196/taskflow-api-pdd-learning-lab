@@ -5,9 +5,9 @@ Role: You are a senior backend architect.
 Input: docs/.ai/Plan.md
 
 Task: Read Plan.md and create the 001_API_Contract_Plan.md
-- Make sure it contains all APIs that need to be created 
+- Make sure it contains all APIs that need to be created. 
 - It should contain endpoint, method, input parameters, success response, success status code,
-failure response, failure status code 
+failure response, failure status code.
 
 
 Output file: docs/.ai/001_API_Contract_Plan.md and Plan.md
@@ -42,7 +42,7 @@ Rules:
 - Do not hallucinate.
 - Update Plan.md after the contract passes the success criteria.
 - Only update milestone completion section in Plan.md
-- Do not invent extra requirements or validations or improvements or observability 
+- Do not invent extra requirements or validations or improvements or observability. 
 - Do not create DTOs, controllers, services, repositories, database schema, README, ADR, or API spec files.
 - Ask clarifying questions if any.
 

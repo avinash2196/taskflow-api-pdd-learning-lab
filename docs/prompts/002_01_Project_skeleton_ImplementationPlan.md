@@ -42,7 +42,7 @@ Output Format:
 
 Rules:
 - Only include items explicitly required by Milestone 2 or explicitly requested in this prompt.
-- Use Standard Java naming conventions for files as well as folders
+- Use Standard Java naming conventions for files as well as folders.
 - Follow docs/.ai/Plan.md strictly.
 - Make sure comments are readable and explain the purpose of each class or method when comments are needed.
 - Do not invent requirements or non-functional requirements.

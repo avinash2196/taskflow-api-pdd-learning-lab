@@ -15,7 +15,7 @@ Rules:
 - Refer to Plan.md and make changes as per 011_Implementation_Plan_Service.md only.
 - Do not hallucinate.
 - Do not invent requirements or non-functional requirements other than defined in 011_Implementation_Plan_Service.md
-- Update test files only if needed for setup fix
+- Update test files only if needed for setup fix.
 - Do not add any additional files or plans or description docs or other docs other than those described in the implementation plan.
 - Update Plan.md after the contract passes the success criteria.
 - Only update milestone completion section in Plan.md
@@ -23,7 +23,7 @@ Rules:
 
 Success criteria:
 - It implements the files defined in 011_Implementation_Plan_Service.md
-- Project should build/compile and test cases should pass as its the green state.
+- Project should build/compile and test cases should pass as it's the green state.
 - We should be able to follow Success criteria defined in 011_Implementation_Plan_Service.md
 
 Once completed, respond only with:

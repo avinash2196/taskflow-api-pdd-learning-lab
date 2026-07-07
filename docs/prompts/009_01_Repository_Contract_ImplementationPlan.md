@@ -4,9 +4,9 @@ Role: You are a senior backend architect.
 
 Input: docs/.ai/Plan.md
 Task: Read Plan.md and 001_API_Contract.md and create 009_Implementation_Plan_Repository_Contract_Plan.md file.
-- Follow the API_Contract.md to find the API contracts
-- We should be able to create repository contracts (not actual implementation) that will be needed by the service layer in Milestone 10
-- This implementation plan should satisfy Milestone 9 planning
+- Follow the API_Contract.md to find the API contracts.
+- We should be able to create repository contracts (not actual implementation) that will be needed by the service layer in Milestone 10.
+- This implementation plan should satisfy Milestone 9 planning.
 - Review the current state before writing the plan to add changes accordingly.
 - Only create or update this file. Do not create or modify anything else.
 
@@ -20,8 +20,8 @@ Output Format:
 
 Rules:
 - Only include items explicitly required by Milestone 9 or explicitly requested in this prompt.
-- Use Standard Java naming conventions for files as well as folders
-- Show both Before and After Changes for comparison
+- Use Standard Java naming conventions for files as well as folders.
+- Show both Before and After Changes for comparison.
 - Make sure the code readability is maintained in preview mode.
 - Follow docs/.ai/Plan.md strictly.
 - Make sure comments are readable and explain the purpose of each class or method when comments are needed.

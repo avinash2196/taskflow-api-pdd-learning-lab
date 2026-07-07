@@ -4,11 +4,11 @@ Role: You are a senior backend architect.
 
 Input: docs/.ai/Plan.md
 Task: Read Plan.md and 001_API_Contract.md and create 004_Implementation_Plan_Controller_Test.md file.
-- Follow the API_Contract.md and Plan.md to find the Controller validation tests and other tests
-- This implementation plan should satisfy Milestone 4 planning
+- Follow the API_Contract.md and Plan.md to find the Controller validation tests and other tests.
+- This implementation plan should satisfy Milestone 4 planning.
 - Review the current state before writing the plan to add changes accordingly.
-- Make sure you cover all negative and positive cases to ensure the later code handles all required cases and Plan.md can be updated
-- Do not try to add any changes in main code files. The scope is limited to test class planning only
+- Make sure you cover all negative and positive cases to ensure the later code handles all required cases and Plan.md can be updated.
+- Do not try to add any changes in main code files. The scope is limited to test class planning only.
 - Target the real controller classes already created. Do not generate placeholder controllers.
 - Only create or update this file. Do not create or modify anything else.
 
@@ -22,7 +22,7 @@ Output Format:
 
 Rules:
 - Only include items explicitly required by Milestone 4 or explicitly requested in this prompt.
-- Use Standard Java naming conventions for files as well as folders
+- Use Standard Java naming conventions for files as well as folders.
 - Follow docs/.ai/Plan.md strictly.
 - Show both Before and After Changes for comparison
 - Make sure the code readability is maintained in preview mode.

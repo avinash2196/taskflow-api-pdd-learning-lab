@@ -9,7 +9,7 @@ Output Format: As defined in 012_Implementation_Plan_Service_Refactor.md
 
 Task: Read Plan.md and 012_Implementation_Plan_Service_Refactor.md.
 Implement the changes from 012_Implementation_Plan_Service_Refactor.md
-- Make sure we follow the order during implementation - refactor code and verify tests still pass and then refactor tests and reverify
+- Make sure we follow the order during implementation - refactor code and verify tests still pass and then refactor tests and reverify.
 
 
 Rules:
@@ -24,7 +24,7 @@ Rules:
 
 Success criteria:
 - It implements the files defined in 012_Implementation_Plan_Service_Refactor.md
-- Project should build/compile and test cases should pass as its the green state.
+- Project should build/compile and test cases should pass as it's the green state.
 - We should be able to follow Success criteria defined in 012_Implementation_Plan_Service_Refactor.md
 
 Once completed, respond only with:
