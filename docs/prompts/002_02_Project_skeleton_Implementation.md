@@ -3,7 +3,7 @@ Role: You are a senior backend architect and developer.
 Input : docs/.ai/Plan.md
 
 Goal: Complete implementation for 002_Implementation_Plan_Project_Skeleton.md
-Output file: Code files as per 002_Implementation_Plan_Project_Skeleton.md and updated Plan.md
+Output file: Code files defined in 002_Implementation_Plan_Project_Skeleton.md and updated Plan.md
 
 Output Format : As defined in 002_Implementation_Plan_Project_Skeleton.md
 
@@ -23,7 +23,7 @@ Rules:
 Success criteria:
 - It completes the file defined in 002_Implementation_Plan_Project_Skeleton.md
 - Project should build/compile.
-- We should be able to follow success criteia defined in 002_Implementation_Plan_Project_Skeleton.md
+- We should be able to follow Success criteria defined in 002_Implementation_Plan_Project_Skeleton.md
 
 Once completed, respond only with:
 

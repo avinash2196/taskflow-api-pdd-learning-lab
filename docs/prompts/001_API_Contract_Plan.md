@@ -1,12 +1,12 @@
-Goal: The goal is to create  clear API contract based on Plan.md
+Goal: The goal is to create a clear API contract based on Plan.md
 
-Role: You are a senior backend architect .
+Role: You are a senior backend architect.
 
 Input : docs/.ai/Plan.md
 
 Task : Read Plan.md and create 001_API_Contract_Plan.md
-- Make sure it contains all the APIs that needs to be created 
-- It should contain endpoint , method, input params, success response, success response code,
+- Make sure it contains all APIs that needs to be created 
+- It should contain endpoint , method, input parameters, success response, success response code,
 failure response, failure response code 
 
 

@@ -95,7 +95,7 @@ Use the following milestone order.
 3.  API Behavior, Domain Model, and Service Contract Planning
     * DTO/API models
     * Domain model
-    * Service interfaces[Create_Plan.md](Create_Plan.md)
+    * Service interfaces
     * High-level mapping from API operations to service interface methods
 4. Controller Tests (RED)
 5. Controller Implementation Using Service Contract (GREEN)

@@ -3,7 +3,7 @@ Role: You are a senior backend architect and developer.
 Input : docs/.ai/Plan.md
 
 Goal: Complete implementation for 013_Implementation_Plan_Repository_Test.md
-Output file: Code files as per 013_Implementation_Plan_Repository_Test.md and updated Plan.md
+Output file: Code files defined in 013_Implementation_Plan_Repository_Test.md and updated Plan.md
 
 Output Format : As defined in 013_Implementation_Plan_Repository_Test.md
 
@@ -23,7 +23,7 @@ Rules:
 Success criteria:
 - It completes the file defined in 013_Implementation_Plan_Repository_Test.md
 - Project should build/compile.
-- We should be able to follow success criteia defined in 013_Implementation_Plan_Repository_Test.md
+- We should be able to follow Success criteria defined in 013_Implementation_Plan_Repository_Test.md
 
 Once completed, respond only with:
 

@@ -3,7 +3,7 @@ Role: You are a senior backend architect and developer.
 Input : docs/.ai/Plan.md
 
 Goal: Complete implementation for 014_Implementation_Plan_Repository.md
-Output file: Code files as per 014_Implementation_Plan_Repository.md and updated Plan.md
+Output file: Code files defined in 014_Implementation_Plan_Repository.md and updated Plan.md
 
 Output Format : As defined in 014_Implementation_Plan_Repository.md
 
@@ -24,7 +24,7 @@ Rules:
 Success criteria:
 - It completes the file defined in 014_Implementation_Plan_Repository.md
 - Project should build/compile and test cases should pass as its green state.
-- We should be able to follow success criteia defined in 014_Implementation_Plan_Repository.md
+- We should be able to follow Success criteria defined in 014_Implementation_Plan_Repository.md
 
 Once completed, respond only with:
 

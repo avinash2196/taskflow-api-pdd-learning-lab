@@ -3,7 +3,7 @@
 Input : docs/.ai/Plan.md
 
 Goal: Complete implementation for 008_Implementation_Plan_Controller_Refactor.md
-Output file: Code files as per 008_Implementation_Plan_Controller_Refactor.md and updated Plan.md
+Output file: Code files defined in 008_Implementation_Plan_Controller_Refactor.md and updated Plan.md
 
 Output Format : As defined in 008_Implementation_Plan_Controller_Refactor.md
 
@@ -25,7 +25,7 @@ Rules:
 Success criteria:
 - It completes the file defined in 008_Implementation_Plan_Controller_Refactor.md
 - Project should build/compile and test cases should pass as its green state.
-- We should be able to follow success criteia defined in 008_Implementation_Plan_Controller_Refactor.md
+- We should be able to follow Success criteria defined in 008_Implementation_Plan_Controller_Refactor.md
 
 Once completed, respond only with:
 

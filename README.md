@@ -16,7 +16,7 @@ This repo shows how to move from a requirement document to working code using a 
 6. Implement the API in small reviewed steps.
 7. Review final implementation against the requirement.
 
-## MVP scope
+## Version 1 scope
 
 The TaskFlow API supports the following Version 1 capabilities:
 
@@ -33,7 +33,7 @@ The TaskFlow API supports the following Version 1 capabilities:
 
 ## Out of scope
 
-The MVP intentionally does not include:
+Version 1 intentionally does not include:
 
 * Authentication or authorization
 * User profile management
@@ -66,7 +66,9 @@ The MVP intentionally does not include:
 │   ├── .ai
 │   │   ├── Plan.md
 │   │   ├── 001_API_Contract.md
-│   │   └── implementation-plans
+│   │   ├── 002_Implementation_Plan_Project_Skeleton.md
+│   │   ├── ....
+│   │   └── 016_Final_review.md
 │   ├── prompts
 │   └── review-log
 ├── src
@@ -126,16 +128,16 @@ DONE
 
 ## Validation behavior
 
-The API validates the main MVP rules:
+The API validates the main Version 1 rules:
 
-| Rule                                       | Behavior                                    |
-| ------------------------------------------ | ------------------------------------------- |
-| Project name is required                   | Validation error                            |
-| Task title is required                     | Validation error                            |
-| Task must belong to an existing project    | Not-found error                             |
-| Task status must be supported              | Validation error                            |
-| Assignee email must be valid when provided | Validation error                            |
-| Due date is optional                       | No additional due-date business rule in MVP |
+| Rule                                       | Behavior                                          |
+| ------------------------------------------ |---------------------------------------------------|
+| Project name is required                   | Validation error                                  |
+| Task title is required                     | Validation error                                  |
+| Task must belong to an existing project    | Not-found error                                   |
+| Task status must be supported              | Validation error                                  |
+| Assignee email must be valid when provided | Validation error                                  |
+| Due date is optional                       | When provided, it must be today or a future date. |
 
 ## Error response approach
 
@@ -174,7 +176,7 @@ The application uses H2 for local development.
 mvn test
 ```
 
-The test suite covers controller behavior, service behavior, validation, error handling, DAO/repository behavior, and integration paths for the MVP API.
+The test suite covers controller behavior, service behavior, validation, error handling, DAO/repository behavior, and integration paths for the Version 1 API.
 
 ## Why this repo exists
 

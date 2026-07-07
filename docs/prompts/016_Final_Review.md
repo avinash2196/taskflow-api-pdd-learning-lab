@@ -1,6 +1,6 @@
 Goal: The goal is to create and final review doc based on current state and Plan.md
 
-Role: You are a senior backend architect .
+Role: You are a senior backend architect.
 
 Input : docs/.ai/Plan.md
 Task : Read Plan.md and current state of implementation and add File : .ai/016_Final_review.md
@@ -40,7 +40,7 @@ Rules:
 - Only include items explicitly required by Milestone 15 or explicitly requested in this prompt.
 - Use Standard Java naming conventions for files as well as folders
 - Follow docs/.ai/Plan.md strictly.
-- Make sure comments are readable and define the usage and purpose of code.( class /method.logic)
+- Make sure comments are readable and explain the purpose of each class or method when comments are needed.
 - Do not invent requirements or non-functional requirements.
 - Do not create or update actual source code/test files.
 

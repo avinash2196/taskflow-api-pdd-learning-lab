@@ -3,7 +3,7 @@ Role: You are a senior backend architect and developer.
 Input : docs/.ai/Plan.md
 
 Goal: Complete implementation for 003_Implementation_Plan_API_Model_Service_Plan.md
-Output file: Code files as per 003_Implementation_Plan_API_Model_Service_Plan.md and updated Plan.md
+Output file: Code files defined in 003_Implementation_Plan_API_Model_Service_Plan.md and updated Plan.md
 
 Output Format : As defined in 003_Implementation_Plan_API_Model_Service_Plan.md
 
@@ -23,7 +23,7 @@ Rules:
 Success criteria:
 - It completes the file defined in 003_Implementation_Plan_API_Model_Service_Plan.md
 - Project should build/compile.
-- We should be able to follow success criteia defined in 003_Implementation_Plan_API_Model_Service_Plan.md
+- We should be able to follow Success criteria defined in 003_Implementation_Plan_API_Model_Service_Plan.md
 
 Once completed, respond only with:
 
