@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: taskflow-api-pdd-learning-lab
+
+  datasource:
+    url: jdbc:h2:mem:taskflowdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+server:
+  port: 8080

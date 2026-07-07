@@ -1,0 +1,1 @@
+Requirement.docx says project name and task title must not be blank, not just non-null. It also lists validation rules for project name and task title as “must not be blank.”
