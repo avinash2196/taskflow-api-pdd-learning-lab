@@ -1,18 +1,12 @@
 # TaskFlow API PDD Learning Lab
 
-TaskFlow API PDD Learning Lab is a Spring Boot 3 sample project that demonstrates
-how to build a small backend API using **Prompt-Driven Development**, 
-requirement-first planning, implementation plans, automated tests, and human review.
+TaskFlow API PDD Learning Lab is a Spring Boot 3 sample project that demonstrates how to build a small backend API using **Prompt-Driven Development (PDD)**, requirement-first planning, implementation plans, automated tests, and human review.
 
-This repository is intentionally small. The goal is not to build a full 
-project management platform. The goal is to show a repeatable engineering
-workflow where an AI coding assistant is guided by clear requirements,
-reviewed plans, tests, and controlled milestones.
+This repository is intentionally small. The goal is not to build a full project management platform. The goal is to show a repeatable engineering workflow where an AI coding assistant is guided by clear requirements, reviewed plans, tests, and controlled milestones.
 
 ## What this project demonstrates
 
-This repo shows how to move from a requirement document to working code
-using a reviewable PDD workflow:
+This repo shows how to move from a requirement document to working code using a reviewable PDD workflow:
 
 1. Start with a business requirement document.
 2. Create a project-level engineering plan.
@@ -20,88 +14,91 @@ using a reviewable PDD workflow:
 4. Create milestone-specific implementation plans.
 5. Write tests for expected behavior.
 6. Implement the API in small reviewed steps.
-7. Review final implementation against the requirement.
+7. Review the final implementation against the requirement.
 
 ## Version 1 scope
 
 The TaskFlow API supports the following Version 1 capabilities:
 
-| Capability                                | Status      |
-| ----------------------------------------- | ----------- |
-| Create project                            | Implemented |
-| Create task under project                 | Implemented |
-| Assign or update task assignee            | Implemented |
-| Change task status                        | Implemented |
-| List tasks by project                     | Implemented |
-| List tasks by status                      | Implemented |
-| List tasks by assignee                    | Implemented |
+| Capability | Status |
+|---|---|
+| Create project | Implemented |
+| Create task under project | Implemented |
+| Assign or update task assignee | Implemented |
+| Change task status | Implemented |
+| List tasks by project | Implemented |
+| List tasks by status | Implemented |
+| List tasks by assignee | Implemented |
 | Consistent validation and error responses | Implemented |
 
 ## Out of scope
 
 Version 1 intentionally does not include:
 
-* Authentication or authorization
-* User profile management
-* UI/frontend application
-* Notifications
-* Comments or attachments
-* Audit logging or event streaming
-* External integrations
-* Production deployment
-* Advanced monitoring
-* Task deletion or project deletion
+- Authentication or authorization
+- User profile management
+- UI/frontend application
+- Notifications
+- Comments or attachments
+- Audit logging or event streaming
+- External integrations
+- Production deployment
+- Advanced monitoring
+- Task deletion or project deletion
 
 ## Tech stack
 
-* Java 17
-* Spring Boot 3
-* Spring Web
-* Spring Validation
-* Spring Data JPA
-* H2 Database
-* JUnit 5
-* Mockito
-* Maven
+- Java 17
+- Spring Boot 3
+- Spring Web
+- Spring Validation
+- Spring Data JPA
+- H2 database
+- JUnit 5
+- Mockito
+- Maven
 
 ## Project structure
 
 ```text
 .
+├── .github
+│   └── workflows
 ├── docs
 │   ├── .ai
 │   │   ├── Plan.md
 │   │   ├── 001_API_Contract.md
 │   │   ├── 002_Implementation_Plan_Project_Skeleton.md
-│   │   ├── ....
+│   │   ├── ...
 │   │   └── 016_Final_review.md
 │   ├── prompts
-│   └── review-log
+│   ├── review-log
+│   └── Requirement.docx
 ├── src
 │   ├── main
 │   │   └── java
 │   └── test
 │       └── java
+├── .gitignore
+├── LICENSE
 ├── pom.xml
-├── README.md
-└── LICENSE
+└── README.md
 ```
 
 ## PDD documentation flow
 
 The important part of this repository is the documentation trail.
 
-| Document area    | Purpose                                                   |
-| ---------------- | --------------------------------------------------------- |
+| Document area | Purpose |
+|---|---|
+| `docs/Requirement.docx` | Original requirement document used as the starting point |
 | `docs/.ai/Plan.md` | Living engineering plan based on the requirement document |
-| `docs/.ai/001_API_Contract.md` | API behavior contract before implementation               |
-| `docs/.ai/002...016 milestone files` | Milestone-specific implementation plans                   |
-| `docs/prompts/`  | Prompt history used during the PDD workflow               |
-| `docs/review-log/` | Review notes and implementation validation                |
+| `docs/.ai/001_API_Contract.md` | API behavior contract created before implementation |
+| `docs/.ai/002...016 milestone files` | Milestone-specific implementation plans and final review |
+| `docs/prompts/` | Prompt history used during the PDD workflow |
+| `docs/review-log/` | Review notes and implementation validation |
 
-This structure makes the repo useful as a learning example for AI-assisted 
-engineering because the final code is not shown in isolation. The planning and
-review process is visible.
+This structure makes the repo useful as a learning example for AI-assisted engineering because the final code is not shown in isolation. The planning and review process is visible.
 
 ## API overview
 
@@ -113,15 +110,15 @@ Base path:
 
 Main capabilities:
 
-| Operation                 | Example endpoint                                |
-| ------------------------- | ----------------------------------------------- |
-| Create project            | `POST /api/projects`                            |
-| Create task under project | `POST /api/projects/{projectId}/tasks`          |
-| List tasks by project     | `GET /api/projects/{projectId}/tasks`           |
-| Assign task               | `PATCH /api/tasks/{taskId}/assignee`            |
-| Change task status        | `PATCH /api/tasks/{taskId}/status`              |
-| List tasks by status      | `GET /api/tasks?status=TODO`                    |
-| List tasks by assignee    | `GET /api/tasks?assigneeEmail=user@example.com` |
+| Operation | Example endpoint |
+|---|---|
+| Create project | `POST /api/projects` |
+| Create task under project | `POST /api/projects/{projectId}/tasks` |
+| List tasks by project | `GET /api/projects/{projectId}/tasks` |
+| Assign task | `PATCH /api/tasks/{taskId}/assignee` |
+| Change task status | `PATCH /api/tasks/{taskId}/status` |
+| List tasks by status | `GET /api/tasks?status=TODO` |
+| List tasks by assignee | `GET /api/tasks?assigneeEmail=user@example.com` |
 
 ## Task statuses
 
@@ -138,27 +135,28 @@ DONE
 
 The API validates the main Version 1 rules:
 
-| Rule                                       | Behavior                                          |
-| ------------------------------------------ |---------------------------------------------------|
-| Project name is required                   | Validation error                                  |
-| Task title is required                     | Validation error                                  |
-| Task must belong to an existing project    | Not-found error                                   |
-| Task status must be supported              | Validation error                                  |
-| Assignee email must be valid when provided | Validation error                                  |
-| Due date is optional                       | When provided, it must be today or a future date. |
+| Rule | Behavior |
+|---|---|
+| Project name is required | Validation error |
+| Task title is required | Validation error |
+| Task must belong to an existing project | Not-found error |
+| Task status must be supported | Validation error |
+| Assignee email must be valid when provided | Validation error |
+| Due date is optional | When provided, it must be today or a future date |
 
 ## Error response approach
 
-The API returns consistent error responses for validation failures and missing 
-resources. Error responses are designed to include:
+The API returns consistent error responses for validation failures and missing resources.
 
-* Machine-readable error code
-* Human-readable message
-* Context about the failing input
+Error responses are designed to include:
+
+- Machine-readable error code
+- Human-readable message
+- Context about the failing input
 
 ## Running the project locally
 
-Prerequisite:
+Prerequisites:
 
 ```text
 Java 17
@@ -185,8 +183,7 @@ The application uses H2 for local development.
 mvn test
 ```
 
-The test suite covers controller behavior, service behavior, validation,
-error handling, DAO/repository behavior, and integration paths for the Version 1 API.
+The test suite covers controller behavior, service behavior, validation, error handling, DAO/repository behavior, and integration paths for the Version 1 API.
 
 ## Why this repo exists
 
@@ -196,20 +193,20 @@ The main idea is simple:
 
 > Do not ask AI to directly generate production code from a vague request. First create requirements, plans, API contracts, implementation plans, and tests. Then allow code generation only inside a reviewed milestone.
 
-This creates a more controlled workflow where the developer remains responsible
-for architecture, scope, validation, and final review.
+This creates a more controlled workflow where the developer remains responsible for architecture, scope, validation, and final review.
 
 ## Suggested learning path
 
 Review the repo in this order:
 
-1. Requirement document
+1. `docs/Requirement.docx`
 2. `docs/.ai/Plan.md`
 3. `docs/.ai/001_API_Contract.md`
-4. Milestone implementation plans
-5. Tests
-6. Source code
-7. Review log
+4. Milestone implementation plans in `docs/.ai/`
+5. Prompt history in `docs/prompts/`
+6. Tests
+7. Source code
+8. Review log
 
 ## License
 
