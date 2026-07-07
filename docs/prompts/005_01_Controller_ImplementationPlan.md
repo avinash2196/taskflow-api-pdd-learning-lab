@@ -2,14 +2,14 @@ Goal: The goal is to create an implementation plan for Controller  based on Plan
 
 Role: You are a senior backend architect.
 
-Input : docs/.ai/Plan.md
-Task : Read Plan.md,001_API_Contract.md and create an 005_Implementation_Plan_Controller.md file.
-- Follow the 004_Implementation_Plan_Controller_Test.md  Plan.md to find the Controller validation tests and other test
+Input: docs/.ai/Plan.md
+Task: Read Plan.md and 001_API_Contract.md and create 005_Implementation_Plan_Controller.md file.
+- Follow the 004_Implementation_Plan_Controller_Test.md  Plan.md to find the Controller validation tests and other tests
 - This implementation plan should satisfy Milestone 5 planning
-- Review the current state before writing plan to add changes accordingly.
-- Make sure we are following plan and creating code only to turn test green not any other validations or anything which was not defined or approved
-- Make sure code compiles and all test cases are passed after implementation of created plan
-- Make sure Controller follow thin controller principle.
+- Review the current state before writing the plan to add changes accordingly.
+- Make sure we are following plan and creating only enough code to turn the tests green not any other validations or anything which was not defined or approved
+- Make sure code compiles and all test cases pass after implementation of created plan
+- Make sure the controller follows the thin controller principle.
 - Only create or update this file. Do not create or modify anything else.
 
 Output Format: 

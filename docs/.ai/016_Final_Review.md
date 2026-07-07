@@ -37,7 +37,7 @@ Result: compile verification and full test rerun evidence are satisfied for this
 Aligned items:
 
 - Approved endpoints and HTTP methods are implemented for project creation, task creation, assignee update, status update, and task listing.
-- Success response codes align with the contract for `201 Created` and `200 OK`.
+- success status codes align with the contract for `201 Created` and `200 OK`.
 - Shared error payload shape exists through `ApiErrorResponse` with `errorCode`, `message`, and `context.field`.
 - Validation and not-found paths are explicitly handled for supported Version 1 flows.
 

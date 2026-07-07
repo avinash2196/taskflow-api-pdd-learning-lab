@@ -1,15 +1,15 @@
-Goal: The goal is to create an implementation plan for Service  based on Plan.md and Service tests created.
+Goal: The goal is to create an implementation plan for service implementation based on Plan.md and service tests already created.
 
 Role: You are a senior backend architect.
 
-Input : docs/.ai/Plan.md
-Task : Read Plan.md,001_API_Contract.md and create an 011_Implementation_Plan_Service.md file.
-- Follow the 010_Implementation_Plan_Service_Test.md, Plan.md to find the service validation tests and other test
+Input: docs/.ai/Plan.md
+Task: Read Plan.md and 001_API_Contract.md and create 011_Implementation_Plan_Service.md file.
+- Follow the 010_Implementation_Plan_Service_Test.md and Plan.md to find the service validation tests and other tests
 - This implementation plan should satisfy Milestone 11 planning
-- Review the current state before writing plan to add changes accordingly.
-- Make sure we are following plan and creating code only to turn test green not any other validations or anything which was not defined or approved
-- Make sure code compiles and all test cases are passed after implementation of created plan
-- Make sure code follows SOLID principle and service contains only business rules.
+- Review the current state before writing the plan to add changes accordingly.
+- Make sure we are following plan and creating only enough code to turn the tests green not any other validations or anything which was not defined or approved
+- Make sure code compiles and all test cases pass after implementation of created plan
+- Make sure the code follows SOLID principles and the service layer contains only business rules.
 - Only create or update this file. Do not create or modify anything else.
 
 Output file: 011_Implementation_Plan_Service.md and updated Plan.md

@@ -1,27 +1,27 @@
 Role: You are a senior backend architect and developer.
 
-Input : docs/.ai/Plan.md
+Input: docs/.ai/Plan.md
 
 Goal: Complete implementation for 003_Implementation_Plan_API_Model_Service_Plan.md
 Output file: Code files defined in 003_Implementation_Plan_API_Model_Service_Plan.md and updated Plan.md
 
-Output Format : As defined in 003_Implementation_Plan_API_Model_Service_Plan.md
+Output Format: As defined in 003_Implementation_Plan_API_Model_Service_Plan.md
 
-Task : Read Plan.md and 003_Implementation_Plan_API_Model_Service_Plan.md.
+Task: Read Plan.md and 003_Implementation_Plan_API_Model_Service_Plan.md.
 Implement the changes from 003_Implementation_Plan_API_Model_Service_Plan.md
 
 Rules:
 
-- Refer Plan.md and make changes as per 003_Implementation_Plan_API_Model_Service_Plan.md only.
+- Refer to Plan.md and make changes as per 003_Implementation_Plan_API_Model_Service_Plan.md only.
 - Do not hallucinate.
 - Do not invent requirements or non-functional requirements other than defined in 003_Implementation_Plan_API_Model_Service_Plan.md
-- Do not add any additional files or plans or description docs or other docs other than described in implementation Plan.
-- Update Plan.md once it passes the success criteria
+- Do not add any additional files or plans or description docs or other docs other than those described in the implementation plan.
+- Update Plan.md after the contract passes the success criteria.
 - Only update milestone completion section in Plan.md
 - Do not rewrite or improve Plan.md
 
 Success criteria:
-- It completes the file defined in 003_Implementation_Plan_API_Model_Service_Plan.md
+- It implements the files defined in 003_Implementation_Plan_API_Model_Service_Plan.md
 - Project should build/compile.
 - We should be able to follow Success criteria defined in 003_Implementation_Plan_API_Model_Service_Plan.md
 

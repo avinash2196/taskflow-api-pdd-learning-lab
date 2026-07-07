@@ -16,7 +16,7 @@ First, review docs/Requirement.docx.
 
 Your first responsibility is to decide whether the requirement document is clear enough to create Plan.md.
 
-If any missing, unclear, contradictory, or open item affects Version 1 scope, business rules, validation rules, API behavior, testing expectations, milestone order, or constraints, do not create or update Plan.md.
+If anything is missing, unclear, contradictory, or open item affects Version 1 scope, business rules, validation rules, API behavior, testing expectations, milestone order, or constraints, do not create or update Plan.md.
 
 Instead, respond with numbered clarification questions only.
 

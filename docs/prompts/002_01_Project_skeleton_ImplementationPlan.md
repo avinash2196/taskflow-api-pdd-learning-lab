@@ -1,9 +1,9 @@
-Goal: The goal is to create an implementation plan for Project Skeleton based on Plan.md
+Goal: The goal is to create an implementation plan for Project skeleton based on Plan.md
 
 Role: You are a senior backend architect.
 
-Input : docs/.ai/Plan.md
-Task : Read Plan.md and create an 002_Implementation_Plan_Project_Skeleton.md file.
+Input: docs/.ai/Plan.md
+Task: Read Plan.md and create an 002_Implementation_Plan_Project_Skeleton.md file.
 
 
 
@@ -12,8 +12,8 @@ Details :
 - Maven project setup using pom.xml
 - Java 17 configuration
 - Spring Boot 3 configuration
-- H2 Database
-- Add swagger
+- H2 database
+- Add Swagger
 - Required base dependencies for skeleton readiness
 - Main Spring Boot application class
 - Base application configuration file
@@ -21,15 +21,15 @@ Details :
 - Test folder structure under src/test/java, but no tests yet
 - use groupId : io.github.avinash2196
 - use artifactId : taskflow-api-pdd-learning-lab
-- Recommend if any other folder also needed as per java standards
+- Recommend any additional folders required by Java standards.
 - Provide details about exact file and code that needs to be added/updated with exact folder name as per  project specs in Plan.md 
-- Create thin controller,use dependency injections and other project files like service/dao so that they act as placeholders so that we can work on them one by one but project keeps on building.
+- Create thin controller,use dependency injections and other project files like service/dao so that they act as placeholders while we can work on them one by one but project keeps on building.
 - Controllers must be created in this milestone as placeholders only. 
 - Controller endpoint methods must not be created in this milestone. 
 - Real controller behavior must be added later after controller tests are written.
 
 Output file: docs/.ai/002_Implementation_Plan_Project_Skeleton.md
-- Plan to add gitignore file also
+- Plan to add a .gitignore file.
 - Only create or update this file. Do not create or modify anything else.
 
 Output Format: 

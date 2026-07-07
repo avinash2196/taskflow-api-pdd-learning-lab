@@ -38,7 +38,7 @@ This contract covers Version 1 REST-style APIs for:
   - `name`
 - Optional inputs:
   - `description`
-- Success response code: `201 Created`
+- success status code: `201 Created`
 - Success response body:
 ```json
 {
@@ -49,7 +49,7 @@ This contract covers Version 1 REST-style APIs for:
   "updatedDate": "date-time"
 }
 ```
-- Failure response codes:
+- failure status codes:
   - `400 Bad Request`
   - `405 Method Not Allowed`
 - Failure response body:
@@ -80,7 +80,7 @@ This contract covers Version 1 REST-style APIs for:
   - `assigneeEmail`
   - `dueDate`
   - `status`
-- Success response code: `201 Created`
+- success status code: `201 Created`
 - Success response body:
 ```json
 {
@@ -95,7 +95,7 @@ This contract covers Version 1 REST-style APIs for:
   "updatedDate": "date-time"
 }
 ```
-- Failure response codes:
+- failure status codes:
   - `400 Bad Request`
   - `404 Not Found`
   - `405 Method Not Allowed`
@@ -132,7 +132,7 @@ This contract covers Version 1 REST-style APIs for:
   - `assigneeEmail`
 - Optional inputs:
   - None
-- Success response code: `200 OK`
+- success status code: `200 OK`
 - Success response body:
 ```json
 {
@@ -147,7 +147,7 @@ This contract covers Version 1 REST-style APIs for:
   "updatedDate": "date-time"
 }
 ```
-- Failure response codes:
+- failure status codes:
   - `400 Bad Request`
   - `404 Not Found`
   - `405 Method Not Allowed`
@@ -176,7 +176,7 @@ This contract covers Version 1 REST-style APIs for:
   - `status`
 - Optional inputs:
   - None
-- Success response code: `200 OK`
+- success status code: `200 OK`
 - Success response body:
 ```json
 {
@@ -191,7 +191,7 @@ This contract covers Version 1 REST-style APIs for:
   "updatedDate": "date-time"
 }
 ```
-- Failure response codes:
+- failure status codes:
   - `400 Bad Request`
   - `404 Not Found`
   - `405 Method Not Allowed`
@@ -219,7 +219,7 @@ This contract covers Version 1 REST-style APIs for:
   - `projectId` as path parameter
 - Optional inputs:
   - None
-- Success response code: `200 OK`
+- success status code: `200 OK`
 - Success response body:
 ```json
 [
@@ -236,7 +236,7 @@ This contract covers Version 1 REST-style APIs for:
   }
 ]
 ```
-- Failure response codes:
+- failure status codes:
   - `404 Not Found`
   - `405 Method Not Allowed`
 - Failure response body:
@@ -262,7 +262,7 @@ This contract covers Version 1 REST-style APIs for:
   - `status` as query parameter
 - Optional inputs:
   - None
-- Success response code: `200 OK`
+- success status code: `200 OK`
 - Success response body:
 ```json
 [
@@ -279,7 +279,7 @@ This contract covers Version 1 REST-style APIs for:
   }
 ]
 ```
-- Failure response codes:
+- failure status codes:
   - `400 Bad Request`
   - `405 Method Not Allowed`
 - Failure response body:
@@ -305,7 +305,7 @@ This contract covers Version 1 REST-style APIs for:
   - `assigneeEmail` as query parameter
 - Optional inputs:
   - None
-- Success response code: `200 OK`
+- success status code: `200 OK`
 - Success response body:
 ```json
 [
@@ -322,7 +322,7 @@ This contract covers Version 1 REST-style APIs for:
   }
 ]
 ```
-- Failure response codes:
+- failure status codes:
   - `400 Bad Request`
   - `405 Method Not Allowed`
 - Failure response body:
@@ -348,9 +348,9 @@ This contract covers Version 1 REST-style APIs for:
   - A failing request
 - Optional inputs:
   - None
-- Success response code: Not applicable
+- success status code: Not applicable
 - Success response body: Not applicable
-- Failure response codes:
+- failure status codes:
   - `400 Bad Request`
   - `404 Not Found`
   - `405 Method Not Allowed`

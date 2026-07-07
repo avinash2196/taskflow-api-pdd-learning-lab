@@ -1,13 +1,13 @@
-Goal: The goal is to create an implementation plan for repository contract Creation based on Plan.md
+Goal: The goal is to create an implementation plan for repository contract creation based on Plan.md
 
 Role: You are a senior backend architect.
 
-Input : docs/.ai/Plan.md
-Task : Read Plan.md,001_API_Contract.md and create an 009_Implementation_Plan_Repository_Contract_Plan.md file.
+Input: docs/.ai/Plan.md
+Task: Read Plan.md and 001_API_Contract.md and create 009_Implementation_Plan_Repository_Contract_Plan.md file.
 - Follow the API_Contract.md to find the API contracts
-- We should be able to create repository contracts (not actual implementation) that will be needed by service in phase 10
+- We should be able to create repository contracts (not actual implementation) that will be needed by the service layer in Milestone 10
 - This implementation plan should satisfy Milestone 9 planning
-- Review the current state before writing plan to add changes accordingly.
+- Review the current state before writing the plan to add changes accordingly.
 - Only create or update this file. Do not create or modify anything else.
 
 Output Format: 
@@ -28,7 +28,7 @@ Rules:
 - Do not invent requirements or non-functional requirements.
 - Do not create or update actual source code files yet.
 - Code/config snippets are allowed only inside this implementation plan to show the intended skeleton structure.
-- Do not create controller /service /config layer or any other configs .
+- Do not create controller, service, config layer or any other configuration files.
 - Do not create .gitkeep files or placeholder files just to force empty folders into Git.
 - Success criteria should be for implementation not plan.
 - Do not assume. Ask clarifying questions if required.
