@@ -44,4 +44,4 @@ Rules:
 
 After creating the file, respond only with:
 
-Created 012_Implementation_Plan_Service_Refactor.md for review._
+Created 012_Implementation_Plan_Service_Refactor.md for review.

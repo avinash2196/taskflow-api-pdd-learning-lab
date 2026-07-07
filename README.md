@@ -1,12 +1,18 @@
 # TaskFlow API PDD Learning Lab
 
-TaskFlow API PDD Learning Lab is a Spring Boot 3 sample project that demonstrates how to build a small backend API using **Prompt-Driven Development**, requirement-first planning, implementation plans, automated tests, and human review.
+TaskFlow API PDD Learning Lab is a Spring Boot 3 sample project that demonstrates
+how to build a small backend API using **Prompt-Driven Development**, 
+requirement-first planning, implementation plans, automated tests, and human review.
 
-This repository is intentionally small. The goal is not to build a full project management platform. The goal is to show a repeatable engineering workflow where an AI coding assistant is guided by clear requirements, reviewed plans, tests, and controlled milestones.
+This repository is intentionally small. The goal is not to build a full 
+project management platform. The goal is to show a repeatable engineering
+workflow where an AI coding assistant is guided by clear requirements,
+reviewed plans, tests, and controlled milestones.
 
 ## What this project demonstrates
 
-This repo shows how to move from a requirement document to working code using a reviewable PDD workflow:
+This repo shows how to move from a requirement document to working code
+using a reviewable PDD workflow:
 
 1. Start with a business requirement document.
 2. Create a project-level engineering plan.
@@ -85,15 +91,17 @@ Version 1 intentionally does not include:
 
 The important part of this repository is the documentation trail.
 
-| Document area                    | Purpose                                                   |
-| -------------------------------- | --------------------------------------------------------- |
-| `docs/.ai/Plan.md`               | Living engineering plan based on the requirement document |
-| `docs/.ai/001_API_Contract.md`   | API behavior contract before implementation               |
-| `docs/.ai/implementation-plans/` | Milestone-specific implementation plans                   |
-| `docs/prompts/`                  | Prompt history used during the PDD workflow               |
-| `docs/review-log/`               | Review notes and implementation validation                |
+| Document area    | Purpose                                                   |
+| ---------------- | --------------------------------------------------------- |
+| `docs/.ai/Plan.md` | Living engineering plan based on the requirement document |
+| `docs/.ai/001_API_Contract.md` | API behavior contract before implementation               |
+| `docs/.ai/002...016 milestone files` | Milestone-specific implementation plans                   |
+| `docs/prompts/`  | Prompt history used during the PDD workflow               |
+| `docs/review-log/` | Review notes and implementation validation                |
 
-This structure makes the repo useful as a learning example for AI-assisted engineering because the final code is not shown in isolation. The planning and review process is visible.
+This structure makes the repo useful as a learning example for AI-assisted 
+engineering because the final code is not shown in isolation. The planning and
+review process is visible.
 
 ## API overview
 
@@ -141,7 +149,8 @@ The API validates the main Version 1 rules:
 
 ## Error response approach
 
-The API returns consistent error responses for validation failures and missing resources. Error responses are designed to include:
+The API returns consistent error responses for validation failures and missing 
+resources. Error responses are designed to include:
 
 * Machine-readable error code
 * Human-readable message
@@ -176,7 +185,8 @@ The application uses H2 for local development.
 mvn test
 ```
 
-The test suite covers controller behavior, service behavior, validation, error handling, DAO/repository behavior, and integration paths for the Version 1 API.
+The test suite covers controller behavior, service behavior, validation,
+error handling, DAO/repository behavior, and integration paths for the Version 1 API.
 
 ## Why this repo exists
 
@@ -186,7 +196,8 @@ The main idea is simple:
 
 > Do not ask AI to directly generate production code from a vague request. First create requirements, plans, API contracts, implementation plans, and tests. Then allow code generation only inside a reviewed milestone.
 
-This creates a more controlled workflow where the developer remains responsible for architecture, scope, validation, and final review.
+This creates a more controlled workflow where the developer remains responsible
+for architecture, scope, validation, and final review.
 
 ## Suggested learning path
 
