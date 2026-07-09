@@ -12,7 +12,7 @@ Task: Read Plan.md,004_Implementation_Plan_Controller_Test.md and 005_Implementa
 - Review the controller tests and controller classes for duplicate code. If common code exists, refactor it into shared helper methods. Create helper files only when they are necessary.
 - Make sure the controller follows the thin controller principle.
 - Plan to remove unnecessary or outdated comments as well. 
-- Do not try to add any changes in main code files. The scope is limited to test class planning only.
+- Do not try to add any changes in main code files. The scope is limited to planning only.
 - Only create or update this file. Do not create or modify anything else.
 
 Output Format: 
