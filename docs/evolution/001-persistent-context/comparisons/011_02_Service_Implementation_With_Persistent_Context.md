@@ -7,22 +7,25 @@
 > Original prompt:
 > `docs/prompts/011_02_Service_Implementation.md`
 
-## Role
 
-Act as a senior backend architect and developer.
+Goal: Complete implementation for 011_Implementation_Plan_Service.md
 
-## Inputs
+Output file: Code files defined in 011_Implementation_Plan_Service.md and updated Plan.md
 
-- `docs/.ai/Plan.md`
-- `docs/.ai/001_API_Contract.md`
-- `docs/.ai/010_Implementation_Plan_Service_Test.md`
-- `docs/.ai/011_Implementation_Plan_Service.md`
-- Existing service tests
-- Current service, domain, and DAO classes related to the milestone
+Output Format: As defined in 011_Implementation_Plan_Service.md
 
-## Goal
+Task: Read Plan.md and 011_Implementation_Plan_Service.md.
+Implement the changes from 011_Implementation_Plan_Service.md
 
-Complete the service implementation approved in:
+Rules:
 
-```text
-docs/.ai/011_Implementation_Plan_Service.md
+- Refer to Plan.md and make changes as per 011_Implementation_Plan_Service.md only.
+- Update test files only if needed for setup fix.
+
+Success criteria:
+- It implements the files defined in 011_Implementation_Plan_Service.md
+- We should be able to follow Success criteria defined in 011_Implementation_Plan_Service.md
+
+Once completed, respond only with:
+
+Implementation completed for  011_Implementation_Plan_Service.md

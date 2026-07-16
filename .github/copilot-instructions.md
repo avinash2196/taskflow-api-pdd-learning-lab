@@ -1,123 +1,94 @@
 # TaskFlow API Copilot Instructions
 
-## Project Purpose
+## Role
 
-TaskFlow API PDD Learning Lab is a Spring Boot sample project that
-demonstrates Prompt-Driven Development.
+Act as a senior backend architect and developer.
 
-The objective is not only to produce working code. The requirements,
-planning, testing, implementation, and review trail must remain visible
-and consistent with the approved project documents.
+## Input
 
-## Sources of Truth
+Before starting any task, review the current repository state and the relevant files:
 
-Before planning or implementing a task, review the relevant project
-artifacts:
+- `docs/Requirement.docx`
+- `docs/.ai/Plan.md`
+- `docs/.ai/001_API_Contract.md`
+- The implementation plan for the active milestone
+- Existing source code and tests related to the task
 
-- `docs/Requirement.docx` contains the original Version 1 requirements.
-- `docs/.ai/Plan.md` contains the reviewed project direction, milestone
-  order, and current state.
-- `docs/.ai/001_API_Contract.md` defines the externally visible API
-  behavior.
-- The active milestone implementation plan defines the approved changes
-  for the current task.
-- Existing tests define behavior already expected by the project.
+## Task
 
-Do not use conversation history as the primary source of project state.
+Follow the active prompt and implementation plan.
 
-When project artifacts conflict or a material requirement is unclear,
-identify the conflict and request clarification instead of silently
-choosing an interpretation.
+Make changes only for the current milestone.
 
-## Prompt-Driven Development Workflow
+## Rules
 
-Follow the milestone order defined in `docs/.ai/Plan.md`.
+- Do not hallucinate.
+- Do not invent requirements or non-functional requirements.
+- Do not invent business rules or validation rules.
+- Do not pull future milestone work into the current task.
+- Do not assume. Ask clarifying questions if required.
+- Do not add any additional files, plans, description documents, or other documents unless requested by the prompt or implementation plan.
+- Only create or update the files required by the active task.
+- Do not create placeholder classes when real project classes already exist.
+- Do not introduce new dependencies unless required by the approved implementation plan.
+- Do not rewrite or improve completed prompts, plans, or review files.
+- Document later workflow improvements under `docs/evolution/`.
 
-For planning work:
+## Planning tasks
 
-1. Review the current repository state.
-2. Read the relevant requirement, plan, contract, tests, and source files.
-3. Identify ambiguities or conflicts before proposing changes.
-4. Create or update only the requested planning artifact.
-5. Do not modify production code or test code unless explicitly requested.
+- Use Standard Java naming conventions for files as well as folders.
+- Follow docs/.ai/Plan.md strictly.
+- Show both Before and After Changes for comparison
+- Make sure the code readability is maintained in preview mode.
+- Make sure comments are readable and explain the purpose of each class or method when comments are needed.
+- Do not create or update actual source code files yet.
+- Code/config snippets are allowed only inside this implementation plan to show the intended skeleton structure.
+- Success criteria should be for implementation not plan.
 
-For implementation work:
+## Implementation tasks
 
-1. Review the current repository state.
-2. Read the approved implementation plan.
-3. Inspect the related tests and source files.
-4. Implement only the approved milestone scope.
-5. Run the relevant tests.
-6. Compare the result with the implementation plan and API contract.
-7. Update only the milestone-completion section of `Plan.md` when the
-   active task explicitly requires it and all success criteria have passed.
+- Implement the changes from the approved implementation plan.
+- Implement only the files defined in the implementation plan.
 
-Do not combine planning and implementation unless the task explicitly
-requests both.
 
-## Scope Discipline
+## Plan.md update rules
 
-- Do not invent requirements, business rules, validation rules, endpoints,
-  or non-functional requirements.
-- Do not add functionality outside Version 1.
-- Modify only files required by the active task or approved implementation
-  plan.
-- Do not create placeholder controllers, services, repositories, DAOs,
-  entities, DTOs, or test doubles when real project classes already exist.
-- Do not introduce speculative abstractions or future milestone work.
-- Do not update unrelated documentation or source files.
-- Do not weaken or remove tests merely to make the build pass.
-- Report unresolved conflicts rather than hiding them.
+- Update `Plan.md` only after the milestone passes its success criteria.
+- Only update the milestone completion section in `Plan.md`.
+- Do not rewrite or improve `Plan.md`.
+- Do not change milestone definitions.
 
-## Architecture
-
-Preserve the existing responsibility boundaries:
-
-- Controllers handle HTTP concerns, request validation, delegation, and
-  response construction.
-- Controllers must not contain business logic or direct persistence logic.
-- Services contain business behavior and orchestration.
-- DAOs and repositories contain persistence concerns.
-- DTOs represent API request and response data.
-- Domain and persistence models must not be exposed directly as API
-  responses unless the approved contract explicitly requires it.
-- Exception handling must remain consistent with the API contract.
-- Tests should remain separated by controller, service, data-access, and
-  integration responsibilities.
-
-Follow existing project patterns before introducing new abstractions.
-
-## Technology
-
-The project uses:
-
-- Java 17
-- Spring Boot 3
-- Spring Web
-- Spring Validation
-- Spring Data JPA
-- H2
-- JUnit 5
-- Mockito
-- Maven
-
-Do not introduce additional frameworks or dependencies unless an approved
-implementation plan explicitly requires them.
-
-## Testing and Validation
-
-Follow the RED, GREEN, and REFACTOR milestone order documented in
-`docs/.ai/Plan.md`.
-
-Use the appropriate level of testing:
-
-- Controller tests verify HTTP behavior, validation, delegation, and
-  response mapping.
-- Service tests verify business behavior.
-- Data-access tests verify persistence behavior.
-- Integration tests verify end-to-end application behavior.
+## Testing
 
 Run the complete test suite with:
 
 ```bash
 mvn test
+```
+
+For a RED milestone:
+
+- The project should build or compile.
+- The expected tests may fail only because the planned actual code behavior is not implemented.
+
+For a GREEN milestone:
+
+- The project should build or compile.
+- The approved test cases should pass.
+
+For a REFACTOR milestone:
+
+- The existing test cases should continue to pass.
+
+## Success criteria
+
+Before completing a task, confirm that:
+
+- The files defined in the active implementation plan were created or updated.
+- Only the approved files were changed.
+- The project builds or compiles.
+- The required tests were executed.
+- The success criteria defined in the active implementation plan were satisfied.
+- No future milestone work was added.
+- No requirement or non-functional requirement was invented.
+- Any `Plan.md` change is limited to the active milestone completion section.
