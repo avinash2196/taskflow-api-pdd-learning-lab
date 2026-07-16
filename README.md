@@ -329,7 +329,6 @@ This creates a more controlled workflow in which AI accelerates engineering work
 Review the original workflow in this order:
 
 1. `docs/Requirement.docx`
-2. `docs/.ai/PlanClarifyingQuestions.md`
 3. `docs/.ai/Plan.md`
 4. `docs/.ai/001_API_Contract.md`
 5. Milestone implementation plans under `docs/.ai/`

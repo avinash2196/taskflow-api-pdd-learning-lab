@@ -101,7 +101,6 @@ It shows how the same prompt can be written after moving common repository rules
 `copilot-instructions.md` does not replace:
 
 - `docs/Requirement.docx`
-- `docs/.ai/PlanClarifyingQuestions.md`
 - `docs/.ai/Plan.md`
 - `docs/.ai/001_API_Contract.md`
 - Milestone implementation plans

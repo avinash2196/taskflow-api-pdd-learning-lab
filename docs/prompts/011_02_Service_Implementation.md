@@ -1,6 +1,6 @@
 Role: You are a senior backend architect and developer.
 
-Input: docs/.ai/Plan.md
+Input: docs/.ai/Plan.md and  011_Implementation_Plan_Service.md
 
 Goal: Complete implementation for 011_Implementation_Plan_Service.md
 Output file: Code files defined in 011_Implementation_Plan_Service.md and updated Plan.md

@@ -6,13 +6,14 @@ Act as a senior backend architect and developer.
 
 ## Input
 
-Before starting any task, review the current repository state and the relevant files:
+Before starting a milestone task, review the current repository state and the relevant files:
 
 - `docs/Requirement.docx`
 - `docs/.ai/Plan.md`
 - `docs/.ai/001_API_Contract.md`
 - The implementation plan for the active milestone
 - Existing source code and tests related to the task
+- For repository documentation or cleanup tasks, review only the files required by the active prompt.
 
 ## Task
 
@@ -31,14 +32,15 @@ Make changes only for the current milestone.
 - Only create or update the files required by the active task.
 - Do not create placeholder classes when real project classes already exist.
 - Do not introduce new dependencies unless required by the approved implementation plan.
-- Do not rewrite or improve completed prompts, plans, or review files.
-- Document later workflow improvements under `docs/evolution/`.
+- Do not rewrite or improve completed prompts, plans, or review files unless the active prompt explicitly requests it.
+- When the active prompt requests documentation of a later workflow improvement, add it under `docs/evolution/`.
 
 ## Planning tasks
 
 - Use Standard Java naming conventions for files as well as folders.
 - Follow docs/.ai/Plan.md strictly.
-- Show both Before and After Changes for comparison
+- For existing files, show both Before and After Changes for comparison.
+- For new files, show the complete proposed content.
 - Make sure the code readability is maintained in preview mode.
 - Make sure comments are readable and explain the purpose of each class or method when comments are needed.
 - Do not create or update actual source code files yet.
