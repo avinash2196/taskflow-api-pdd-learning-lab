@@ -55,6 +55,8 @@ class TaskControllerTest {
     @Test
     @DisplayName("POST /api/projects/{projectId}/tasks returns 201 Created with the created task payload")
     void createTaskReturnsCreatedTaskResponse() throws Exception {
+        LocalDate expectedDueDate = LocalDate.now().plusDays(7);
+
         given(taskService.createTask(eq("project-100"), any()))
                 .willReturn(ControllerTestDataFactory.defaultTaskResponse());
 
@@ -69,7 +71,7 @@ class TaskControllerTest {
                 .andExpect(jsonPath("$.description").value("Milestone 4 RED tests"))
                 .andExpect(jsonPath("$.status").value("TODO"))
                 .andExpect(jsonPath("$.assigneeEmail").value("owner@example.com"))
-                .andExpect(jsonPath("$.dueDate").value("2026-07-10"))
+                .andExpect(jsonPath("$.dueDate").value(expectedDueDate.toString()))
                 .andExpect(jsonPath("$.createdDate").value("2026-07-05T11:00:00"))
                 .andExpect(jsonPath("$.updatedDate").value("2026-07-05T11:00:00"));
 
@@ -78,7 +80,7 @@ class TaskControllerTest {
         assertThat(requestCaptor.getValue().getTitle()).isEqualTo("Write controller tests");
         assertThat(requestCaptor.getValue().getDescription()).isEqualTo("Milestone 4 RED tests");
         assertThat(requestCaptor.getValue().getAssigneeEmail()).isEqualTo("owner@example.com");
-        assertThat(requestCaptor.getValue().getDueDate()).isEqualTo(LocalDate.of(2026, 7, 10));
+        assertThat(requestCaptor.getValue().getDueDate()).isEqualTo(expectedDueDate);
         assertThat(requestCaptor.getValue().getStatus()).isEqualTo(TaskStatus.TODO);
     }
 
