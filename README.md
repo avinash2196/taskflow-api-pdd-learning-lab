@@ -329,20 +329,20 @@ This creates a more controlled workflow in which AI accelerates engineering work
 Review the original workflow in this order:
 
 1. `docs/Requirement.docx`
-3. `docs/.ai/Plan.md`
-4. `docs/.ai/001_API_Contract.md`
-5. Milestone implementation plans under `docs/.ai/`
-6. Original prompts under `docs/prompts/`
-7. Tests under `src/test/`
-8. Production code under `src/main/`
-9. Review notes under `docs/review-log/`
-10. Final review in `docs/.ai/016_Final_review.md`
+2. `docs/.ai/Plan.md`
+3. `docs/.ai/001_API_Contract.md`
+4. Milestone implementation plans under `docs/.ai/`
+5. Original prompts under `docs/prompts/`
+6. Tests under `src/test/`
+7. Production code under `src/main/`
+8. Review notes under `docs/review-log/`
+9. Final review in `docs/.ai/016_Final_Review.md`
 
 Then review the persistent-context refinement:
 
-11. `.github/copilot-instructions.md`
-12. `docs/evolution/001-persistent-context/README.md`
-13. `docs/evolution/001-persistent-context/comparisons/011_02_Service_Implementation_With_Persistent_Context.md`
+10. `.github/copilot-instructions.md`
+11. `docs/evolution/001-persistent-context/README.md`
+12. `docs/evolution/001-persistent-context/comparisons/011_02_Service_Implementation_With_Persistent_Context.md`
 
 To inspect the repository exactly as it existed through the first three articles, use:
 
