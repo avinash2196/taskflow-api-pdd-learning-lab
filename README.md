@@ -15,6 +15,8 @@ This repo shows how to move from a requirement document to working code using a 
 5. Write tests for expected behavior.
 6. Implement the API in small reviewed steps.
 7. Review the final implementation against the requirement.
+8. Separate stable repository guidance from milestone-specific task
+      context without rewriting the original prompt history.
 
 ## Version 1 scope
 
@@ -95,10 +97,28 @@ The important part of this repository is the documentation trail.
 | `docs/.ai/Plan.md` | Living engineering plan based on the requirement document |
 | `docs/.ai/001_API_Contract.md` | API behavior contract created before implementation |
 | `docs/.ai/002...016 milestone files` | Milestone-specific implementation plans and final review |
-| `docs/prompts/` | Prompt history used during the PDD workflow |
+| `docs/prompts/` | Original prompt history used during the PDD workflow |
+| `.github/copilot-instructions.md` | Stable repository-wide guidance for AI-assisted work |
+| `docs/evolution/` | Documented refinements made after reviewing the original workflow |
 | `docs/review-log/` | Review notes and implementation validation |
 
-This structure makes the repo useful as a learning example for AI-assisted engineering because the final code is not shown in isolation. The planning and review process is visible.
+This structure makes the repository useful as a learning example for
+AI-assisted engineering because the final code is not shown in isolation.
+
+The original requirements, plans, prompts, tests, implementation, and
+reviews remain visible. Later workflow refinements are documented
+separately so they do not rewrite the original project history.
+
+## Evolution of the workflow
+
+The original TaskFlow API workflow kept important architectural, scope,
+and process constraints directly inside each milestone prompt.
+
+That approach made every prompt self-contained and helped establish which
+rules remained stable across the complete project.
+
+The repository state documented through the first three articles is
+preserved by the tag:
 
 ## API overview
 
@@ -207,6 +227,16 @@ Review the repo in this order:
 6. Tests
 7. Source code
 8. Review log
+
+Then review the later workflow refinement:
+
+9. `.github/copilot-instructions.md`
+10. `docs/evolution/001-persistent-context/README.md`
+11. The service prompt comparison under
+    `docs/evolution/001-persistent-context/comparisons/`
+
+To inspect the repository exactly as it existed through the first three
+articles, use the tag: **article-3-prompt-driven-workflow**
 
 ## License
 
