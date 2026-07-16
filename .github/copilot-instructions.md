@@ -45,12 +45,20 @@ Make changes only for the current milestone.
 - Make sure comments are readable and explain the purpose of each class or method when comments are needed.
 - Do not create or update actual source code files yet.
 - Code/config snippets are allowed only inside this implementation plan to show the intended skeleton structure.
-- Success criteria should be for implementation not plan.
+- Success criteria should be for implementation not plan. 
+- Output Format for Planning Task:
+  - Milestone description
+  - Files to be updated/changed
+  - Exact code changes with comments
+  - Out of scope
+  - Success criteria
 
 ## Implementation tasks
 
 - Implement the changes from the approved implementation plan.
 - Implement only the files defined in the implementation plan.
+- Output Format for Implementation Task:
+  - As defined in respective milestone plan that we need to follow
 
 
 ## Plan.md update rules
