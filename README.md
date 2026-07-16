@@ -2,21 +2,23 @@
 
 TaskFlow API PDD Learning Lab is a Spring Boot 3 sample project that demonstrates how to build a small backend API using **Prompt-Driven Development (PDD)**, requirement-first planning, implementation plans, automated tests, and human review.
 
-This repository is intentionally small. The goal is not to build a full project management platform. The goal is to show a repeatable engineering workflow where an AI coding assistant is guided by clear requirements, reviewed plans, tests, and controlled milestones.
+This repository is intentionally small. The goal is not to build a complete project-management platform. The goal is to demonstrate a repeatable engineering workflow in which an AI coding assistant works from clear requirements, reviewed plans, tests, and controlled milestones.
+
+The repository also preserves how the workflow evolved. The original prompt trail remains unchanged, while later refinements are documented separately.
 
 ## What this project demonstrates
 
-This repo shows how to move from a requirement document to working code using a reviewable PDD workflow:
+This repository shows how to move from a requirement document to working code through a reviewable PDD workflow:
 
 1. Start with a business requirement document.
 2. Create a project-level engineering plan.
-3. Define an API contract.
-4. Create milestone-specific implementation plans.
-5. Write tests for expected behavior.
-6. Implement the API in small reviewed steps.
-7. Review the final implementation against the requirement.
-8. Separate stable repository guidance from milestone-specific task
-      context without rewriting the original prompt history.
+3. Define the externally visible API contract.
+4. Divide the work into reviewable milestones.
+5. Create an implementation plan before each milestone.
+6. Write tests for the expected behavior.
+7. Implement the approved scope in small steps.
+8. Review the final implementation against the requirements and contract.
+9. Separate stable repository guidance from milestone-specific task context without rewriting the original prompt history.
 
 ## Version 1 scope
 
@@ -24,9 +26,9 @@ The TaskFlow API supports the following Version 1 capabilities:
 
 | Capability | Status |
 |---|---|
-| Create project | Implemented |
-| Create task under project | Implemented |
-| Assign or update task assignee | Implemented |
+| Create a project | Implemented |
+| Create a task under a project | Implemented |
+| Assign or update a task assignee | Implemented |
 | Change task status | Implemented |
 | List tasks by project | Implemented |
 | List tasks by status | Implemented |
@@ -39,7 +41,7 @@ Version 1 intentionally does not include:
 
 - Authentication or authorization
 - User profile management
-- UI/frontend application
+- A UI or frontend application
 - Notifications
 - Comments or attachments
 - Audit logging or event streaming
@@ -65,6 +67,7 @@ Version 1 intentionally does not include:
 ```text
 .
 ├── .github
+│   ├── copilot-instructions.md
 │   └── workflows
 ├── docs
 │   ├── .ai
@@ -73,6 +76,11 @@ Version 1 intentionally does not include:
 │   │   ├── 002_Implementation_Plan_Project_Skeleton.md
 │   │   ├── ...
 │   │   └── 016_Final_review.md
+│   ├── evolution
+│   │   └── 001-persistent-context
+│   │       ├── README.md
+│   │       └── comparisons
+│   │           └── 011_02_Service_Implementation_With_Persistent_Context.md
 │   ├── prompts
 │   ├── review-log
 │   └── Requirement.docx
@@ -89,36 +97,118 @@ Version 1 intentionally does not include:
 
 ## PDD documentation flow
 
-The important part of this repository is the documentation trail.
+The documentation trail is a central part of this repository.
 
 | Document area | Purpose |
 |---|---|
-| `docs/Requirement.docx` | Original requirement document used as the starting point |
-| `docs/.ai/Plan.md` | Living engineering plan based on the requirement document |
-| `docs/.ai/001_API_Contract.md` | API behavior contract created before implementation |
+| `docs/Requirement.docx` | Original business requirement used as the starting point |
+| `docs/.ai/Plan.md` | Living engineering plan, milestone order, and project state |
+| `docs/.ai/001_API_Contract.md` | Reviewed contract for externally visible API behavior |
 | `docs/.ai/002...016 milestone files` | Milestone-specific implementation plans and final review |
 | `docs/prompts/` | Original prompt history used during the PDD workflow |
 | `.github/copilot-instructions.md` | Stable repository-wide guidance for AI-assisted work |
-| `docs/evolution/` | Documented refinements made after reviewing the original workflow |
-| `docs/review-log/` | Review notes and implementation validation |
+| `docs/evolution/` | Refinements introduced after reviewing the original workflow |
+| `docs/review-log/` | Independent review notes and implementation validation |
+| `src/test/` | Executable evidence of expected behavior |
+| `src/main/` | Production implementation created through the reviewed milestones |
 
-This structure makes the repository useful as a learning example for
-AI-assisted engineering because the final code is not shown in isolation.
+The final code is therefore not presented in isolation. The repository retains the requirements, clarification decisions, plans, prompts, tests, implementation, and reviews that produced it.
 
-The original requirements, plans, prompts, tests, implementation, and
-reviews remain visible. Later workflow refinements are documented
-separately so they do not rewrite the original project history.
+Later refinements are documented separately so they do not rewrite the original project history.
 
 ## Evolution of the workflow
 
-The original TaskFlow API workflow kept important architectural, scope,
-and process constraints directly inside each milestone prompt.
+The original TaskFlow API workflow kept important architectural, scope, and process constraints directly inside each milestone prompt.
 
-That approach made every prompt self-contained and helped establish which
-rules remained stable across the complete project.
+That approach was intentional.
 
-The repository state documented through the first three articles is
-preserved by the tag:
+It made every prompt self-contained, kept task boundaries visible, and helped identify which instructions remained stable across planning, testing, implementation, refactoring, and review milestones.
+
+The repository state documented through the first three Prompt-Driven Development articles is preserved by the Git tag:
+
+```text
+pdd-article-3-workflow-snapshot
+```
+
+The original prompt history remains unchanged under:
+
+```text
+docs/prompts/
+```
+
+After reviewing the completed workflow, the repeated instructions were divided into two categories.
+
+### Stable repository context
+
+Examples include:
+
+- Approved sources of truth
+- Architectural responsibility boundaries
+- Scope-control expectations
+- Build and test commands
+- The general PDD workflow
+- Rules against unrelated changes
+- Completion and validation checks
+
+These stable working agreements now live in:
+
+```text
+.github/copilot-instructions.md
+```
+
+### Milestone-specific context
+
+Examples include:
+
+- The active milestone
+- Exact input documents
+- The approved implementation plan
+- Files permitted to change
+- Current RED or GREEN test state
+- Feature-specific acceptance criteria
+- Milestone-specific success criteria
+- Required completion response
+
+These instructions remain inside the individual task prompt.
+
+The distinction is:
+
+> Repository instructions define how the AI assistant should work inside the codebase. The task prompt defines what it should work on next.
+
+The objective is not merely to create shorter prompts. It is to give each type of engineering context a clearer owner.
+
+The refinement is documented in:
+
+```text
+docs/evolution/001-persistent-context/README.md
+```
+
+A comparison based on the original service implementation prompt is available in:
+
+```text
+docs/evolution/001-persistent-context/comparisons/
+011_02_Service_Implementation_With_Persistent_Context.md
+```
+
+The original prompt remains available at:
+
+```text
+docs/prompts/011_02_Service_Implementation.md
+```
+
+Repository instructions do not replace:
+
+- Business requirements
+- Clarification decisions
+- `Plan.md`
+- The API contract
+- Milestone implementation plans
+- Task-specific prompts
+- Automated tests
+- Continuous integration
+- Human engineering review
+
+They provide persistent project context, but the generated result must still be validated against the approved artifacts.
 
 ## API overview
 
@@ -135,10 +225,16 @@ Main capabilities:
 | Create project | `POST /api/projects` |
 | Create task under project | `POST /api/projects/{projectId}/tasks` |
 | List tasks by project | `GET /api/projects/{projectId}/tasks` |
-| Assign task | `PATCH /api/tasks/{taskId}/assignee` |
+| Assign or update task assignee | `PATCH /api/tasks/{taskId}/assignee` |
 | Change task status | `PATCH /api/tasks/{taskId}/status` |
 | List tasks by status | `GET /api/tasks?status=TODO` |
 | List tasks by assignee | `GET /api/tasks?assigneeEmail=user@example.com` |
+
+For the complete endpoint definitions, request and response models, validation behavior, status codes, and error contract, review:
+
+```text
+docs/.ai/001_API_Contract.md
+```
 
 ## Task statuses
 
@@ -170,26 +266,28 @@ The API returns consistent error responses for validation failures and missing r
 
 Error responses are designed to include:
 
-- Machine-readable error code
-- Human-readable message
+- A machine-readable error code
+- A human-readable message
 - Context about the failing input
+
+The precise response format is defined in the API contract.
 
 ## Running the project locally
 
-Prerequisites:
+### Prerequisites
 
 ```text
 Java 17
 Maven
 ```
 
-Run tests:
+### Run the tests
 
 ```bash
 mvn test
 ```
 
-Run the application:
+### Run the application
 
 ```bash
 mvn spring-boot:run
@@ -197,46 +295,61 @@ mvn spring-boot:run
 
 The application uses H2 for local development.
 
-## Running tests
+## Test coverage
+
+The test suite covers:
+
+- Controller behavior
+- Request validation
+- Error handling
+- Service behavior
+- DAO and repository behavior
+- Integration paths for the Version 1 API
+
+Run the complete suite with:
 
 ```bash
 mvn test
 ```
 
-The test suite covers controller behavior, service behavior, validation, error handling, DAO/repository behavior, and integration paths for the Version 1 API.
+A successful build is necessary, but it is not the only completion condition. The implementation must also remain aligned with the approved requirements, API contract, implementation plans, and milestone scope.
 
-## Why this repo exists
+## Why this repository exists
 
-This project is a companion learning repo for explaining **Prompt-Driven Development**.
+This project is a companion learning repository for explaining **Prompt-Driven Development**.
 
-The main idea is simple:
+The main idea is:
 
-> Do not ask AI to directly generate production code from a vague request. First create requirements, plans, API contracts, implementation plans, and tests. Then allow code generation only inside a reviewed milestone.
+> Do not ask an AI coding assistant to generate production code directly from a vague request. First establish the requirements, resolve important ambiguities, define the API contract, plan the implementation, write the relevant tests, and review the proposed change. Then allow implementation only inside the approved milestone.
 
-This creates a more controlled workflow where the developer remains responsible for architecture, scope, validation, and final review.
+This creates a more controlled workflow in which AI accelerates engineering work without taking ownership of architecture, scope, validation, or final approval.
 
 ## Suggested learning path
 
-Review the repo in this order:
+Review the original workflow in this order:
 
 1. `docs/Requirement.docx`
-2. `docs/.ai/Plan.md`
-3. `docs/.ai/001_API_Contract.md`
-4. Milestone implementation plans in `docs/.ai/`
-5. Prompt history in `docs/prompts/`
-6. Tests
-7. Source code
-8. Review log
+2. `docs/.ai/PlanClarifyingQuestions.md`
+3. `docs/.ai/Plan.md`
+4. `docs/.ai/001_API_Contract.md`
+5. Milestone implementation plans under `docs/.ai/`
+6. Original prompts under `docs/prompts/`
+7. Tests under `src/test/`
+8. Production code under `src/main/`
+9. Review notes under `docs/review-log/`
+10. Final review in `docs/.ai/016_Final_review.md`
 
-Then review the later workflow refinement:
+Then review the persistent-context refinement:
 
-9. `.github/copilot-instructions.md`
-10. `docs/evolution/001-persistent-context/README.md`
-11. The service prompt comparison under
-    `docs/evolution/001-persistent-context/comparisons/`
+11. `.github/copilot-instructions.md`
+12. `docs/evolution/001-persistent-context/README.md`
+13. `docs/evolution/001-persistent-context/comparisons/011_02_Service_Implementation_With_Persistent_Context.md`
 
-To inspect the repository exactly as it existed through the first three
-articles, use the tag: **article-3-prompt-driven-workflow**
+To inspect the repository exactly as it existed through the first three articles, use:
+
+```text
+pdd-article-3-workflow-snapshot
+```
 
 ## License
 
