@@ -53,7 +53,7 @@ public final class ControllerTestDataFactory {
         response.setDescription("Milestone 4 RED tests");
         response.setStatus(TaskStatus.TODO);
         response.setAssigneeEmail("owner@example.com");
-        response.setDueDate(LocalDate.of(2026, 7, 10));
+        response.setDueDate(LocalDate.now().plusDays(7));
         response.setCreatedDate(LocalDateTime.of(2026, 7, 5, 11, 0, 0));
         response.setUpdatedDate(LocalDateTime.of(2026, 7, 5, 11, 0, 0));
         return response;
