@@ -1,5 +1,7 @@
 package io.github.avinash2196.taskflowapipddlearninglab.controller.support;
 
+import java.time.LocalDate;
+
 /**
  * Shared JSON payload builders for controller tests.
  */
@@ -44,15 +46,19 @@ public final class ControllerTestJsonFactory {
      * @return JSON payload string
      */
     public static String defaultCreateTaskRequest() {
+        return createTaskRequestWithExplicitDueDate(LocalDate.now().plusDays(7).toString());
+    }
+
+    private static String createTaskRequestWithExplicitDueDate(String dueDate) {
         return """
                 {
                   "title": "Write controller tests",
                   "description": "Milestone 4 RED tests",
                   "assigneeEmail": "owner@example.com",
-                  "dueDate": "2026-07-10",
+                  "dueDate": %s,
                   "status": "TODO"
                 }
-                """;
+                """.formatted(asJsonValue(dueDate));
     }
 
     /**
