@@ -2,7 +2,9 @@
 
 TaskFlow API PDD Learning Lab is a Spring Boot 3 sample project that demonstrates how to build a small backend API using **Prompt-Driven Development (PDD)**, requirement-first planning, implementation plans, automated tests, and human review.
 
-This repository is intentionally small. The goal is not to build a complete project-management platform. The goal is to demonstrate a repeatable engineering workflow in which an AI coding assistant works from clear requirements, reviewed plans, tests, and controlled milestones.
+This repository is intentionally small. The goal is not to build a complete project-management platform.
+
+The goal is to demonstrate a repeatable engineering workflow in which an AI coding assistant works from clear requirements, reviewed plans, tests, and controlled milestones.
 
 The repository also preserves how the workflow evolved. The original prompt trail remains unchanged, while later refinements are documented separately.
 
@@ -19,6 +21,7 @@ This repository shows how to move from a requirement document to working code th
 7. Implement the approved scope in small steps.
 8. Review the final implementation against the requirements and contract.
 9. Separate stable repository guidance from milestone-specific task context without rewriting the original prompt history.
+10. Apply the evolved workflow to a real maintenance issue using smaller, focused prompts.
 
 ## Version 1 scope
 
@@ -79,8 +82,12 @@ Version 1 intentionally does not include:
 │   ├── evolution
 │   │   └── 001-persistent-context
 │   │       ├── README.md
-│   │       └── comparisons
-│   │           └── 011_02_Service_Implementation_With_Persistent_Context.md
+│   │       ├── comparisons
+│   │       │   └── 011_02_Service_Implementation_With_Persistent_Context.md
+│   │       └── applied-example
+│   │           ├── 001_01_Date_Dependent_Test_Fixture_Plan_Prompt.md
+│   │           ├── 001_Date_Dependent_Test_Fixture_Implementation_Plan.md
+│   │           └── 001_02_Date_Dependent_Test_Fixture_Implementation_Prompt.md
 │   ├── prompts
 │   ├── review-log
 │   └── Requirement.docx
@@ -112,9 +119,9 @@ The documentation trail is a central part of this repository.
 | `src/test/` | Executable evidence of expected behavior |
 | `src/main/` | Production implementation created through the reviewed milestones |
 
-The final code is therefore not presented in isolation. The repository retains the requirements, clarification decisions, plans, prompts, tests, implementation, and reviews that produced it.
+The final code is not presented in isolation.
 
-Later refinements are documented separately so they do not rewrite the original project history.
+The repository retains the requirements, plans, prompts, tests, implementation, and reviews that produced it. Later refinements are documented separately so they do not rewrite the original project history.
 
 ## Evolution of the workflow
 
@@ -142,11 +149,11 @@ After reviewing the completed workflow, the repeated instructions were divided i
 
 Examples include:
 
-- Approved sources of truth
+- Approved sources of project context
 - Architectural responsibility boundaries
 - Scope-control expectations
 - Build and test commands
-- The general PDD workflow
+- General planning and implementation rules
 - Rules against unrelated changes
 - Completion and validation checks
 
@@ -160,13 +167,13 @@ These stable working agreements now live in:
 
 Examples include:
 
-- The active milestone
+- The active milestone or maintenance task
 - Exact input documents
 - The approved implementation plan
 - Files permitted to change
-- Current RED or GREEN test state
+- Current RED, GREEN, or REFACTOR state
 - Feature-specific acceptance criteria
-- Milestone-specific success criteria
+- Task-specific success criteria
 - Required completion response
 
 These instructions remain inside the individual task prompt.
@@ -175,13 +182,15 @@ The distinction is:
 
 > Repository instructions define how the AI assistant should work inside the codebase. The task prompt defines what it should work on next.
 
-The objective is not merely to create shorter prompts. It is to give each type of engineering context a clearer owner.
+The objective is not only to create shorter prompts. It is to give each type of engineering context a clearer owner.
 
 The refinement is documented in:
 
 ```text
 docs/evolution/001-persistent-context/README.md
 ```
+
+## Original and refined prompt comparison
 
 A comparison based on the original service implementation prompt is available in:
 
@@ -196,19 +205,67 @@ The original prompt remains available at:
 docs/prompts/011_02_Service_Implementation.md
 ```
 
+The comparison shows which instructions can move into persistent repository context and which instructions should remain in the active task prompt.
+
+## Applied persistent-context example
+
+The repository also contains a real maintenance example under:
+
+```text
+docs/evolution/001-persistent-context/applied-example/
+```
+
+A controller test began failing because a hard-coded due date that originally represented a valid future date had moved into the past.
+
+The correction was completed using:
+
+1. A small planning prompt
+2. The repository-wide Copilot instructions
+3. A generated implementation plan
+4. Human review of the proposed changes
+5. A small implementation prompt
+6. The existing test suite and pull-request review
+
+The artifacts are:
+
+```text
+001_01_Date_Dependent_Test_Fixture_Plan_Prompt.md
+001_Date_Dependent_Test_Fixture_Implementation_Plan.md
+001_02_Date_Dependent_Test_Fixture_Implementation_Prompt.md
+```
+
+The prompts are preserved as they were used.
+
+They were not rewritten or polished after the implementation. Their purpose is to show whether ordinary, focused prompts can remain effective when stable project instructions are already available in the repository.
+
+The example does not introduce a new Version 1 milestone and does not modify the original prompt trail.
+
+## What repository instructions do not replace
+
 Repository instructions do not replace:
 
 - Business requirements
-- Clarification decisions
 - `Plan.md`
 - The API contract
 - Milestone implementation plans
 - Task-specific prompts
 - Automated tests
 - Continuous integration
-- Human engineering review
+- Pull-request review
+- Human engineering judgment
 
-They provide persistent project context, but the generated result must still be validated against the approved artifacts.
+They provide persistent project context, but the generated result must still be validated against the approved artifacts and actual code changes.
+
+## Repository snapshots
+
+The repository preserves two important states:
+
+| Tag | Repository state |
+|---|---|
+| `pdd-article-3-workflow-snapshot` | Original PDD workflow documented through the first three articles |
+| `pdd-article-4-persistent-context` | Persistent Copilot instructions and the applied maintenance example |
+
+The original tag remains unchanged so readers can compare the workflow before and after persistent repository context was introduced.
 
 ## API overview
 
@@ -230,7 +287,7 @@ Main capabilities:
 | List tasks by status | `GET /api/tasks?status=TODO` |
 | List tasks by assignee | `GET /api/tasks?assigneeEmail=user@example.com` |
 
-For the complete endpoint definitions, request and response models, validation behavior, status codes, and error contract, review:
+For complete endpoint definitions, request and response models, validation behavior, status codes, and the error contract, review:
 
 ```text
 docs/.ai/001_API_Contract.md
@@ -312,7 +369,9 @@ Run the complete suite with:
 mvn test
 ```
 
-A successful build is necessary, but it is not the only completion condition. The implementation must also remain aligned with the approved requirements, API contract, implementation plans, and milestone scope.
+A successful build is necessary, but it is not the only completion condition.
+
+The implementation must also remain aligned with the approved requirements, API contract, implementation plans, and active task scope.
 
 ## Why this repository exists
 
@@ -320,7 +379,7 @@ This project is a companion learning repository for explaining **Prompt-Driven D
 
 The main idea is:
 
-> Do not ask an AI coding assistant to generate production code directly from a vague request. First establish the requirements, resolve important ambiguities, define the API contract, plan the implementation, write the relevant tests, and review the proposed change. Then allow implementation only inside the approved milestone.
+> Do not ask an AI coding assistant to generate production code directly from a vague request. First establish the requirements, resolve important ambiguities, define the API contract, plan the implementation, write the relevant tests, and review the proposed change. Then allow implementation only inside the approved scope.
 
 This creates a more controlled workflow in which AI accelerates engineering work without taking ownership of architecture, scope, validation, or final approval.
 
@@ -336,18 +395,27 @@ Review the original workflow in this order:
 6. Tests under `src/test/`
 7. Production code under `src/main/`
 8. Review notes under `docs/review-log/`
-9. Final review in `docs/.ai/016_Final_Review.md`
+9. Final review in `docs/.ai/016_Final_review.md`
 
 Then review the persistent-context refinement:
 
 10. `.github/copilot-instructions.md`
 11. `docs/evolution/001-persistent-context/README.md`
 12. `docs/evolution/001-persistent-context/comparisons/011_02_Service_Implementation_With_Persistent_Context.md`
+13. `docs/evolution/001-persistent-context/applied-example/001_01_Date_Dependent_Test_Fixture_Plan_Prompt.md`
+14. `docs/evolution/001-persistent-context/applied-example/001_Date_Dependent_Test_Fixture_Implementation_Plan.md`
+15. `docs/evolution/001-persistent-context/applied-example/001_02_Date_Dependent_Test_Fixture_Implementation_Prompt.md`
 
 To inspect the repository exactly as it existed through the first three articles, use:
 
 ```text
 pdd-article-3-workflow-snapshot
+```
+
+To inspect the repository state prepared for the persistent-context article, use:
+
+```text
+pdd-article-4-persistent-context
 ```
 
 ## License
